@@ -22,7 +22,6 @@ class SentimentAnalysis:
         auth = tweepy.OAuthHandler(consumer_key=consumerKey, consumer_secret=consumerSecret)
         auth.set_access_token(accessToken, accessTokenSecret)
         api = tweepy.API(auth)
-
         # searching for tweets
         self.tweets = tweepy.Cursor(api.search, q=searchTerm, lang = "en").items(NoOfTerms)
 
